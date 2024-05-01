@@ -26,6 +26,18 @@ jobs:
         run: |
           # Add commands to turn your Python script into a .app
 
+
+      - name: Debug
+        run: |
+          ls -l
+          echo "Current directory contents:"
+          ls -la
+          echo "Current version: $current_version"
+        working-directory: ${{ github.workspace }}
+
+
+
+
       - name: Update version number
         run: |
           current_version=$(awk -F= '/^VERSION/{print $2}' version.txt)
