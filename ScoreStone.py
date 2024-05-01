@@ -4,7 +4,7 @@ from tkinter import Tk, Button, Label, simpledialog
 
 pointsFromHuts = total = tools = toolMultiplier = people = peopleM = farms = farmMultiplier = culture = minCulture = maxCulture = huts = hutMultiplier = 0
 
-#this is a test push
+#again...
 window = Tk()
 window.title("Counter Overlay")
 
