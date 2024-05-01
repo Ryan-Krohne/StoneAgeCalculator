@@ -40,10 +40,11 @@ jobs:
 
       - name: Update version number
         run: |
-          current_version=$(awk -F= '/^VERSION/{print $2}' version.txt)
-          new_version=$(awk -v current_version="$current_version" 'BEGIN{printf "%.1f", current_version + 0.1}')
-          sed -i '' "s/VERSION=.*/VERSION=$new_version/" version.txt
+          current_version=$(awk -F= '/^VERSION/{print $2}' version.txt);
+          new_version=$(awk -v current_version="$current_version" 'BEGIN{printf "%.1f", current_version + 0.1}');
+          sed -i '' "s/VERSION=.*/VERSION=$new_version/" version.txt;
           echo "New version: $new_version"
+        working-directory: ${{ github.workspace }}
 
       - name: Commit changes
         run: |
