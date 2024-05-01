@@ -1,0 +1,40 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Build .app
+        run: |
+          # Add commands to turn your Python script into a .app
+
+      - name: Update version number
+        run: |
+          # Add commands to update the version number
+          # For example, you could use sed to update a version file
+          # sed -i 's/VERSION=.*/VERSION=new_version/' version_file
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'actions@github.com'
+          git commit -am "Update version number"
+          git push
