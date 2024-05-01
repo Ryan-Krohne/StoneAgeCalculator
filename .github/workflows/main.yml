@@ -40,7 +40,8 @@ jobs:
 
       - name: Update version number
         run: |
-          sed -i 's/VERSION=1.1/VERSION=0.0/' version.txt
+          awk -F= '/VERSION/ {printf "VERSION=%.1f\n", $2 + 0.1; next} {print}' version.txt > version.tmp && mv version.tmp version.txt
+
         
 
       - name: Commit changes
