@@ -13,6 +13,8 @@ window.overrideredirect(True)
 window.attributes('-topmost', True)
 window.attributes('-fullscreen', False)  # Remove for non-fullscreen window
 
+
+#TODO: makeui more useable
 # Function to update the animal total label
 
 
